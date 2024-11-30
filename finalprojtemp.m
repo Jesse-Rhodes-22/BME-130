@@ -1,18 +1,14 @@
-% File name (without extension)
-recordName = '0188'; % Replace with your actual file name (without .dat or .hea)
+clear all;
+close all;
+clc;
 
-% Read all signals and metadata
-[signals, fields] = rdsamp(recordName);
+[signals, temp] = rdsamp('0188'); %rdsamp is like load but for physionet wfdb
 
-% Display the field contents to understand the structure
-disp(fields);
+ecg1 = signals(:, 1); %ecg1 is column 1
+ecg2 = signals(:, 2); %ecg2 is column 2
+nibp = signals(:, 3); %ecg3 is column 3
 
-% Extract ECG1 signal (usually the first channel, confirm based on your dataset)
-ecg1 = signals(:, 1); % Adjust the column index if ECG1 is on a different channel
-ecg2 = signals(:, 2);
-nibp = signals(:, 3);
-
-% Plot the ECG1 signal
+%plotting
 figure;
 plot(ecg1);
 title('ECG1 Signal');
