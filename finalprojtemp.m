@@ -2,7 +2,7 @@ clear all;
 close all;
 clc;
 
-[signals, temp] = rdsamp('0188'); %rdsamp is like load but for physionet wfdb
+[signals, temp] = rdsamp('0016'); %rdsamp is like load but for physionet wfdb
 
 ecg1 = signals(:, 1); %ecg1 is column 1
 ecg2 = signals(:, 2); %ecg2 is column 2
